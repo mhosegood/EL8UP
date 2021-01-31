@@ -1,0 +1,4 @@
+FROM registry.access.redhat.com/ubi8-init
+RUN yum -y update; yum -y install httpd; yum -y clean all; systemctl enable httpd
+COPY index.html /var/www/html/
+

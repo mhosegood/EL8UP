@@ -1,0 +1,4 @@
+FROM ubi8
+LABEL example from First Alternative
+RUN yum -y update; yum module install nginx -y; yum -y clean all
+CMD ["nginx", "-g", "daemon off;"]

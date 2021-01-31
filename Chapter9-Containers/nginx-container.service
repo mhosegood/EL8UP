@@ -1,0 +1,11 @@
+[Unit]
+Description=Nginx customised container
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/podman start -a  sysdnginx-container
+ExecStop=/usr/bin/podman stop -t 2  sysdnginx-container
+
+[Install]
+WantedBy=multi-user.target
+

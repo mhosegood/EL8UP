@@ -1,0 +1,7 @@
+[BaseOS-FA]
+name=CentOS-$releasever - Base on FA local http server
+baseurl=http://192.168.200.41/centos/8/BaseOS
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
