@@ -1,0 +1,8 @@
+#!/usr/sbin/nft -f
+# This script is called single_dns.nft
+define dns_server = 192.168.200.1
+add table inet dnsfilter
+add chain inet dnsfilter dns { type filter hook input priority 0; }
+add rule inet dnsfilter dns ip saddr $dns_server counter
+
+

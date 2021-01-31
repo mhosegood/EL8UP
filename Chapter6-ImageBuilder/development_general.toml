@@ -1,0 +1,34 @@
+name = "development_general"
+description = "A RHEL8.3 developers image, with compilers and other tools"
+version = "0.0.5"
+modules = []
+groups = []
+
+[[packages]]
+name = "gcc"
+version = "*"
+
+[[packages]]
+name = "bash"
+version = "*"
+
+[[packages]]
+name = "bash-doc"
+version = "*"
+
+[[packages]]
+name = "ruby"
+version = "*"
+
+[[packages]]
+name = "kickstart"
+version = "*"
+
+[[customizations.user]]
+name = "guest"
+description = "Guest account in group wheel"
+password = "password2020"
+home = "/home/guest"
+shell = "/usr/bin/bash"
+groups = ["users", "wheel"]
+uid = "2020"

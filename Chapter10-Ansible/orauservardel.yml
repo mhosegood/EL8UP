@@ -1,0 +1,18 @@
+---
+- hosts: web
+  remote_user: guest
+  become: yes
+  become_method: sudo
+  tasks:
+   - name: Remove user "{{ uvar }}"
+     user:
+       name: "{{ uvar }}"
+       uid: "{{ idvar }}"
+       shell: /bin/bash
+       state: absent
+   - name: Remove group "{{ uvar }}" 
+     group:
+       name: "{{ uvar }}"
+       gid: "{{ idvar }}"
+       state: absent
+

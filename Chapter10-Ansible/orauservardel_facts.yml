@@ -1,0 +1,21 @@
+---
+- hosts: web
+  gather_facts: true
+  remote_user: guest
+  become: yes
+  become_method: sudo
+  tasks:
+   - debug:
+       msg: The Ansible version is {{ ansible_distribution }}
+   - name: Remove user "{{ uvar }}"
+     user:
+       name: "{{ uvar }}"
+       uid: "{{ idvar }}"
+       shell: /bin/bash
+       state: absent
+   - name: Remove group "{{ uvar }}" 
+     group:
+       name: "{{ uvar }}"
+       gid: "{{ idvar }}"
+       state: absent
+

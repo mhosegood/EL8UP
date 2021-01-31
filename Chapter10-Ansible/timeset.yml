@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  become_method: sudo
+  vars:
+    timesync_ntp_servers:
+      - hostname: 0.europe.pool.ntp.org
+        iburst: yes
+      - hostname: 1.europe.pool.ntp.org
+        iburst: yes
+      - hostname: 2.europe.pool.ntp.org
+        iburst: yes
+    timesync_ntp_provider: chrony
+  roles:
+    - rhel-system-roles.timesync
+

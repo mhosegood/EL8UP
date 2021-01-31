@@ -1,0 +1,9 @@
+[[customizations.user]]
+name = "guest"
+description = "Guest account in group wheel"
+password = "password2020"  
+home = "/home/guest"
+shell = "/usr/bin/bash"
+groups = ["users", "wheel"]
+uid = 2020
+

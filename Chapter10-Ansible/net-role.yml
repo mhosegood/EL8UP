@@ -1,0 +1,18 @@
+---
+- hosts: multihomed
+  become: yes
+  become_method: sudo
+  vars:
+    network_provider: nm
+    network_connections:
+      - name: NICens224
+        state: up
+        type: ethernet
+        interface_name: ens224
+        autoconnect: yes
+        ip:
+          dhcp4: yes
+          auto6: no
+  roles:
+      - role: rhel-system-roles.network
+

@@ -1,0 +1,18 @@
+- hosts: web
+  become: yes
+  become_method: sudo
+  tasks:
+   - name: Add group "oracle" to remote server
+     group:
+       name: oracle
+       gid: 2007
+       state: present
+   - name: Add user oracle
+     user:
+       name: oracle
+       uid: 2007
+       comment: Oracle DB user
+       group: oracle
+       shell: /bin/bash
+       password: $6$NZW7P9twLOr1ESuU$q/wnmL7wVWLwVrehn1E0jjouF.EReQ18H7SivzxQPQtT1R.wbsCTPIzEZ8BlOoo4AVKyPIDR2IldKW0OjBFi51
+
